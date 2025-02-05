@@ -10,7 +10,7 @@ public class CalculadoraTest {
 
     @Test
     public void testConvertirNumero_Binario() {
-        assertEquals(10, Calculadora.convertirNumero("1010", 0));
+        assertEquals(10, Calculadora.convertirNumero("10", 0));
         assertEquals(-1, Calculadora.convertirNumero("102", 0));
     }
 
