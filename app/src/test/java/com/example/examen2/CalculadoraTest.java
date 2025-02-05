@@ -2,6 +2,9 @@ package com.example.examen2;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import java.util.Arrays;
+import java.util.List;
 
 public class CalculadoraTest {
 
@@ -36,6 +39,12 @@ public class CalculadoraTest {
     @Test
     public void testConvertirADestino_Decimal() {
         assertEquals("10", Calculadora.convertirADestino(10, 2));
+    }
+
+    @Test
+    public void testEncuentra_ElementoPresente() {
+        List<Integer> lista = Arrays.asList(1, 2, 3, 4, 5);
+        assertTrue(Calculadora.Encuentra(lista, 3)); // Debería ser true
     }
 }
 
