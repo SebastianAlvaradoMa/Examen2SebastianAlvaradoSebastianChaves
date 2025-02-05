@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <!-- Spinner para seleccionar la base numérica -->
+    <Spinner
+        android:id="@+id/spinnerBase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/base_array" />
+
+    <!-- EditText para ingresar el número -->
+    <EditText
+        android:id="@+id/editTextInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingresa el número"
+        android:inputType="text" />
+
+    <!-- Botones para las operaciones -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/buttonAdd" android:text="+" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <Button android:id="@+id/buttonSubtract" android:text="-" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <Button android:id="@+id/buttonMultiply" android:text="*" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <Button android:id="@+id/buttonDivide" android:text="/" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+        <!-- Agregar más botones según sea necesario -->
+    </GridLayout>
+
+    <!-- Resultado -->
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Resultado"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Botón para convertir entre bases -->
+    <Button
+        android:id="@+id/buttonConvertir"
+        android:text="Convertir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" />
+</LinearLayout>
