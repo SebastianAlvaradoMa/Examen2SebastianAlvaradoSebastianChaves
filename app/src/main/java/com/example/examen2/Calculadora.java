@@ -1,4 +1,7 @@
 package com.example.examen2;
+
+import java.util.List;
+
 public class Calculadora {
 
     // Método para convertir el número a la base seleccionada (0: Binario, 1: Octal, 2: Decimal, 3: Hexadecimal)
@@ -67,5 +70,9 @@ public class Calculadora {
             default:
                 throw new IllegalArgumentException("Base de destino no soportada");
         }
+    }
+
+    public static boolean Encuentra(List<Integer> lista, int elemento) {
+        return lista.contains(elemento);
     }
 }

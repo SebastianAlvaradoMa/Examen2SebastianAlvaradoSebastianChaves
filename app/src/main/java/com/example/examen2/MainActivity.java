@@ -9,21 +9,46 @@ import android.widget.TextView;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class MainActivity extends Activity {
 
     private EditText editTextInput;
     private TextView textViewResult;
     private Spinner spinnerBase;
     private int baseSeleccionada;
+    private EditText editTextElement;
+    private TextView textViewResultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        editTextElement = findViewById(R.id.editTextElement);
+        textViewResultado = findViewById(R.id.textViewResultado);
         editTextInput = findViewById(R.id.editTextInput);
         textViewResult = findViewById(R.id.textViewResult);
         spinnerBase = findViewById(R.id.spinnerBase);
+
+        Button buttonBuscar = findViewById(R.id.buttonBuscar);
+
+        List<Integer> listaNumeros = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8);
+
+        buttonBuscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String input = editTextElement.getText().toString();
+                if (!input.isEmpty()) {
+                    int numero = Integer.parseInt(input);
+                    boolean encontrado = Calculadora.Encuentra(listaNumeros, numero);
+                    textViewResultado.setText(encontrado ? "Número encontrado ✅" : "Número no encontrado ❌");
+                } else {
+                    textViewResultado.setText("Por favor, ingrese un número");
+                }
+            }
+        });
 
         // Configurar el Spinner para seleccionar la base
         spinnerBase.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
