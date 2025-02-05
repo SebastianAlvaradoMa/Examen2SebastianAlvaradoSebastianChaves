@@ -22,5 +22,20 @@ public class CalculadoraTest {
         assertEquals(15, Calculadora.realizarOperacion(10, 5, "+"));
         assertEquals(-5, Calculadora.realizarOperacion(-10, 5, "+"));
     }
+
+    @Test
+    public void testRealizarOperacion_Resta() {
+        assertEquals(1, Calculadora.realizarOperacion(5, 4, "-"));
+    }
+
+    @Test
+    public void testConvertirADestino_Octal() {
+        assertEquals("12", Calculadora.convertirADestino(10, 1));
+    }
+
+    @Test
+    public void testConvertirADestino_Decimal() {
+        assertEquals("10", Calculadora.convertirADestino(10, 2));
+    }
 }
 
