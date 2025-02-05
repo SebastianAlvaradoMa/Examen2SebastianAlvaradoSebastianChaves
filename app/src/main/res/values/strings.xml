@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Calculadora</string>
+    <string-array name="base_array">
+        <item>Binario</item>
+        <item>Octal</item>
+        <item>Decimal</item>
+        <item>Hexadecimal</item>
+    </string-array>
+</resources>
